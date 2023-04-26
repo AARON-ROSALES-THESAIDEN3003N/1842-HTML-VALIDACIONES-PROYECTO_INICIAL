@@ -24,6 +24,7 @@ const tipoDeErrores = [
     "customError",
 ]; 
 
+
 const mensajesDeError = {
     nombre:{
         valueMissing: "Este campo no puede estar vacio"
