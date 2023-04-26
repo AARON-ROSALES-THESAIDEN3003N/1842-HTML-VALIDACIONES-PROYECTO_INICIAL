@@ -10,10 +10,19 @@ export function valida(input){
     }
     if(input.validity.valid){
         input.parentElement.classList.remove("input-container--invalid");
+        input.parentElement.querySelector(".input-message-error"),innerHtml = ''
     }else{
         input.parentElement.classList.add("input-container--invalid");
+        input.parentElement.querySelector(".input-message-error"),innerHtml = mostrarMensajeError(tipoDeInput,input)
     }
 }
+
+const tipoDeErrores = [
+    "valueMissing",
+    "typeMismatch",
+    "patternMismatch",
+    "customError",
+]; 
 
 const mensajesDeError = {
     nombre:{
@@ -37,6 +46,17 @@ const mensajesDeError = {
 const validadores ={
     nacimiento: input => validarNacimiento(input),
 };
+
+function mostrarMensajeError(tipoDeInput, input){
+    let mensaje = ""
+    tipoDeErrores.forEach( error =>{
+        if(input.validity[error]){
+            console.log
+        }
+    })
+
+    return mensaje
+}
 
 function validarNacimiento(input){
     const fechaCliente = new Date(input.value);
